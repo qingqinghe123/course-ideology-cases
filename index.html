@@ -142,22 +142,17 @@
   (function(){
     var v = document.getElementById('mainVideo');
     var hint = document.getElementById('videoHint');
-    // 点击播放时显示提示
-    v.addEventListener('play', function(){ hint.style.display='block'; });
-    v.addEventListener('playing', function(){ hint.style.display='none'; });
-    // 网络中断自动重试（最多3次）
+    // 用户点击播放时显示加载提示
+    v.addEventListener('play', function(){ hint.style.display = 'block'; });
+    // 视频真正开始播放后隐藏提示
+    v.addEventListener('playing', function(){ hint.style.display = 'none'; });
+    // 网络波动自动重试（最多3次，每次间隔2秒）
     var retries = 0;
     v.addEventListener('error', function(){
-      if(retries < 3){
-        retries++;
-        setTimeout(function(){ v.load(); v.play(); }, 2000);
-      }
+      if(retries < 3){ retries++; setTimeout(function(){ v.load(); v.play(); }, 2000); }
     });
     v.addEventListener('stalled', function(){
-      if(retries < 3){
-        retries++;
-        setTimeout(function(){ v.load(); v.play(); }, 2000);
-      }
+      if(retries < 3){ retries++; setTimeout(function(){ v.load(); v.play(); }, 2000); }
     });
   })();
   </script>
