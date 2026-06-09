@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单相变压器课程思政教学案例 | 武汉理工大学</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    color: #2c3e50;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  .header {
+    text-align: center;
+    padding: 32px 24px;
+    margin-bottom: 32px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border-top: 4px solid #1e5fa8;
+  }
+  .badge {
+    display: inline-block;
+    background: #1e5fa8;
+    color: white;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .subtitle {
+    color: #5a6c7d;
+    font-size: 15px;
+  }
+  .video-wrapper {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    margin-bottom: 32px;
+  }
+  video {
+    width: 100%;
+    display: block;
+    max-height: 70vh;
+  }
+  .info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+  .info-card h2 {
+    font-size: 18px;
+    color: #1e5fa8;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eef1f5;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px 32px;
+  }
+  .info-item {
+    display: flex;
+    align-items: baseline;
+  }
+  .info-label {
+    color: #7d8a99;
+    width: 90px;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .info-value {
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .description p {
+    color: #4a5868;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .description p:last-child { margin-bottom: 0; }
+  .footer {
+    text-align: center;
+    color: #95a5b5;
+    font-size: 13px;
+    padding: 24px 0;
+    margin-top: 24px;
+  }
+  .download-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #1e5fa8;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .download-link:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    h1 { font-size: 22px; }
+    .info-card { padding: 20px; }
+    .info-label { width: 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <span class="badge">省级课程思政优秀教学案例</span>
+    <h1>从"交直流之争"到特高压</h1>
+    <p class="subtitle">单相变压器的工作原理及应用 · 武汉理工大学课程思政教学案例</p>
+  </div>
+
+  <div class="video-wrapper">
+    <video id="mainVideo" controls preload="none" controlsList="nodownload">
+      <source src="https://github.com/qingqinghe123/course-ideology-cases/releases/download/case-2026-06/transformer-case-2026.mp4.mp4" type="video/mp4">
+      您的浏览器不支持视频播放，请<a href="https://github.com/qingqinghe123/course-ideology-cases/releases/download/case-2026-06/transformer-case-2026.mp4.mp4" style="color:#fff">点击此处下载视频</a>。
+    </video>
+    <div id="videoHint" style="text-align:center;padding:10px 0;color:#aab;font-size:13px;display:none;">视频文件较大，加载可能需要几秒，请耐心等待…</div>
+  </div>
+  <script>
+  (function(){
+    var v = document.getElementById('mainVideo');
+    var hint = document.getElementById('videoHint');
+    // 点击播放时显示提示
+    v.addEventListener('play', function(){ hint.style.display='block'; });
+    v.addEventListener('playing', function(){ hint.style.display='none'; });
+    // 网络中断自动重试（最多3次）
+    var retries = 0;
+    v.addEventListener('error', function(){
+      if(retries < 3){
+        retries++;
+        setTimeout(function(){ v.load(); v.play(); }, 2000);
+      }
+    });
+    v.addEventListener('stalled', function(){
+      if(retries < 3){
+        retries++;
+        setTimeout(function(){ v.load(); v.play(); }, 2000);
+      }
+    });
+  })();
+  </script>
+
+  <div class="info-card">
+    <h2>课程基本信息</h2>
+    <div class="info-grid">
+      <div class="info-item"><span class="info-label">课程名称</span><span class="info-value">电工与电子技术基础C</span></div>
+      <div class="info-item"><span class="info-label">所属章节</span><span class="info-value">第五章 磁路与变压器</span></div>
+      <div class="info-item"><span class="info-label">面向专业</span><span class="info-value">材料类、能源动力类、交通运输类</span></div>
+      <div class="info-item"><span class="info-label">案例负责人</span><span class="info-value">何青青</span></div>
+      <div class="info-item"><span class="info-label">所在单位</span><span class="info-value">武汉理工大学自动化学院</span></div>
+      <div class="info-item"><span class="info-label">填报日期</span><span class="info-value">2026年6月</span></div>
+    </div>
+  </div>
+
+  <div class="info-card description">
+    <h2>案例简介</h2>
+    <p>本案例以"单相变压器的工作原理及应用"为载体，通过"爱迪生与特斯拉交直流之争"这一科技史故事切入，把材料专业学生普遍觉得抽象的电磁感应原理，与中国特高压输电这张"国家名片"串联起来。</p>
+    <p>课堂从空载、有载两种工况出发推导电磁关系，以一台老式扩音机为例验证阻抗变换功能，最终落脚在我国自主研发的±800kV、±1100kV特高压直流输电工程上，让学生切实感受到"今天课本里推导的那几个公式，正是支撑国家能源大动脉的科学原理"。</p>
+    <p>案例融合了科学探索精神、辩证唯物思维、科技自立自强、绿色发展使命四类思政元素，采用"项目导向式AI-BOPPPS"教学模式实施。</p>
+  </div>
+
+  <div class="footer">
+    <p>2026年湖北高校省级本科课程思政优秀项目申报材料 · 仅供评审使用</p>
+    <p><a class="download-link" href="https://github.com/qingqinghe123/course-ideology-cases/releases/download/case-2026-06/transformer-case-2026.mp4.mp4">如视频无法播放，点击此处下载</a></p>
+  </div>
+
+</div>
+</body>
+</html>
